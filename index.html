@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Todo List</title>
+<script defer src="main.js"></script></head>
+<body>
+    <div class="app-layout">
+        <aside>
+            <h3>Projects</h3>
+            <div id="project-list"></div>
+            <button id="add-project-btn">+ New Project</button>
+        </aside>
+        <main>
+            <button id="add-todo-btn">Add Task</button>
+            <div id="todo-container"></div>
+        </main>
+    </div>
+
+    <!-- MODAL SECTION -->
+    <div id="todo-modal" class="modal">
+        <div class="modal-content">
+            <!-- PERBAIKAN: Menambahkan id="modal-title" agar bisa diubah via JS -->
+            <h3 id="modal-title">Add New Task</h3>
+            
+            <form id="todo-form">
+                <input type="text" id="form-title" placeholder="Task Title" required>
+                <textarea id="form-desc" placeholder="Description (Optional)"></textarea>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="form-date">Due Date</label>
+                        <input type="date" id="form-date" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="form-priority">Priority</label>
+                        <select id="form-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="close-modal" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
